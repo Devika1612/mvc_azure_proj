@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build outputs
+bin/
+obj/
+publish/
+*.vsidx
+*.opendb
+*.db
+
+# Logs
+*.log

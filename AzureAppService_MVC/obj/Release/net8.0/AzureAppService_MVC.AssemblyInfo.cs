@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AzureAppService_MVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0d987123038bd40ad4b957f2daff3b6ebd2ea63")]
 [assembly: System.Reflection.AssemblyProductAttribute("AzureAppService_MVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AzureAppService_MVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

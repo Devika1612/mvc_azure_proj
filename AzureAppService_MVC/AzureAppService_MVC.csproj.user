@@ -2,6 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\Properties\PublishProfiles\AzureAppServiceMVC20261011062609 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\Devika\Development\AzureAppService_MVC\.github\workflows\AzureAppServiceMVC20261013153639.yml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

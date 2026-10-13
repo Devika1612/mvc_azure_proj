@@ -32,3 +32,4 @@ D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0
 D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\AzureAppService_MVC.pdb
 D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\AzureAppService_MVC.genruntimeconfig.cache
 D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\ref\AzureAppService_MVC.dll
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\AzureAppService_MVC.sourcelink.json
