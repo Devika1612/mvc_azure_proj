@@ -1,0 +1,7 @@
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\AzureAppService_MVC.exe
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\appsettings.json
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\AzureAppService_MVC.dll
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\AzureAppService_MVC.deps.json
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\AzureAppService_MVC.runtimeconfig.json
+D:\Devika\Development\AzureAppService_MVC\AzureAppService_MVC\obj\Release\net8.0\PubTmp\Out\AzureAppService_MVC.pdb
