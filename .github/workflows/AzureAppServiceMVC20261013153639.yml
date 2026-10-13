@@ -1,60 +1,32 @@
-name: Build and deploy .NET Core application to Web App AzureAppServiceMVC20261013153639
+name: Build and deploy ASP.NET Core to Azure Web App
 on:
   push:
     branches:
-    - main
-permissions:
-  id-token: write
-  contents: read
-env:
-  AZURE_WEBAPP_NAME: AzureAppServiceMVC20261013153639
-  AZURE_WEBAPP_PACKAGE_PATH: AzureAppService_MVC\published
-  CONFIGURATION: Release
-  DOTNET_CORE_VERSION: 8.0.x
-  WORKING_DIRECTORY: AzureAppService_MVC
-  AzureAppServiceMVC20261013153639_CLIENT_ID_8D06: fb4f4883-e4b3-4423-b1b3-22940d6e13a2
-  AzureAppServiceMVC20261013153639_TENANT_ID_E8E0: 2adf5de0-5f01-4ac2-a550-058573156828
+      - main
+
 jobs:
-  build:
-    environment: AzureAppServiceMVC20261013153639_Env
+  build-and-deploy:
     runs-on: windows-latest
+    
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup .NET SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: ${{ env.DOTNET_CORE_VERSION }}
-    - name: Restore
-      run: dotnet restore "${{ env.WORKING_DIRECTORY }}"
-    - name: Build
-      run: dotnet build "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-restore
-    - name: Test
-      run: dotnet test "${{ env.WORKING_DIRECTORY }}" --no-build
-    - name: Publish
-      run: dotnet publish "${{ env.WORKING_DIRECTORY }}" --configuration ${{ env.CONFIGURATION }} --no-build --output "${{ env.AZURE_WEBAPP_PACKAGE_PATH }}"
-    - name: Publish Artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: webapp
-        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-  deploy:
-    environment: AzureAppServiceMVC20261013153639_Env
-    runs-on: windows-latest
-    needs: build
-    steps:
-    - name: Download artifact from build job
-      uses: actions/download-artifact@v4
-      with:
-        name: webapp
-        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
-    - name: Azure Login
-      uses: azure/login@v2
-      with:
-        client-id: ${{ vars.AzureAppServiceMVC20261013153639_CLIENT_ID_8D06 }}
-        tenant-id: ${{ vars.AzureAppServiceMVC20261013153639_TENANT_ID_E8E0 }}
-        subscription-id: ${{ vars.AzureAppServiceMVC20261013153639_SUBSCRIPTION_ID_E8E0 }}
-    - name: Deploy to Azure WebApp
-      uses: azure/webapps-deploy@v2
-      with:
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      - uses: actions/checkout@v4
+      
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+          
+      - name: Restore
+        run: dotnet restore
+        
+      - name: Build
+        run: dotnet build --configuration Release --no-restore
+        
+      - name: Publish
+        run: dotnet publish --configuration Release --output ./publish --no-build
+        
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./publish
